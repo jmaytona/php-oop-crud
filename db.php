@@ -1,17 +1,31 @@
 <?php
 
-class Database {
-    public $con;
-    public function __construct(){
-        $this->con = mysqli_connect("localhost", "root", "", "php_oop");
-        if($this->con){
-            echo "Connection Success!";
-        } else{
-            echo "Error on Connection!";
-        }
-    }
-}
+class Database 
+{
+    public $connect;
+    private $host = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $database = "php_oop";
 
+    function __construct()
+    {
+        $this->database_connect();
+    }
+
+    public function database_connect()
+    {
+        $this->connect = mysqli_connect($this->host, $this->username, $this->password, $this->database);
+    }
+
+    public function execute_query($query)
+    {
+        return mysqli_query($this->connect, $query);
+    }
+
+}
+ 
 $obj = new Database;
+
 
 ?>

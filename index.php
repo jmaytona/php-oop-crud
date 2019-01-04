@@ -31,7 +31,7 @@
                 </div>
                     <div class="card-body">
                         <h5 class="card-title">GAME INPUT</h5>
-                        <form>
+                        <form method="POST" id="user_form">
                             <div class="form-group">
                                 <label for="gameTitle">Game Title</label>
                                 <input type="text" class="form-control" id="gameTitle" name="gameTitle" aria-describedby="emailHelp" placeholder="Title">
@@ -45,7 +45,12 @@
                                 <input type="checkbox" class="form-check-input" id="platinum">
                                 <label class="form-check-label" for="platinum">Platinum</label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="form-group">
+                                <label for="userImage">Upload Image</label>
+                                <input type="file" class="form-control-file" id="userImage">
+                            </div>
+                            <input type="hidden" name="action" id="action">
+                            <input type="submit" class="btn btn-primary" value="INSERT">
                         </form>
                     </div>
                 </div>
@@ -54,6 +59,7 @@
                 <table class="table">
                     <thead>
                     <tr>
+                        <th>Image</th>
                         <th>Game Title</th>
                         <th>Score</th>
                         <th>Platinum</th>
@@ -72,5 +78,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </body>
 </html>
